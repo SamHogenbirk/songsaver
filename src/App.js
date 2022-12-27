@@ -1,12 +1,13 @@
-import Container from "./components/Container";
-
+import List from "./components/List";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
 
-    <Container />
+    <main>
+      <List />
+    </main>
 
-  );
+  )
 }
 export default App;

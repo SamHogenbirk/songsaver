@@ -1,0 +1,17 @@
+.song-row {  
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px;
+  font-size: 20px;
+  background-color: lightgreen;
+}
+
+.delete {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px;
+  font-size: 20px;
+  background-color: red;
+}
