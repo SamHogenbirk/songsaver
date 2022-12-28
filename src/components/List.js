@@ -18,7 +18,7 @@ const List = () => {
                         <th className="song-row">Rating</th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     {songs.map((item) =>
                         <ListItem

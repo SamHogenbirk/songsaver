@@ -12,7 +12,20 @@ const songSlice = createSlice({
 			rating: "e",
 		},
 
-	]
+	],
+
+	reducers: {
+
+		deleteSong: (songs, action) => {
+			// console.log(action)
+			return songs
+				.map(item => item)
+				.filter((songs) => songs.id != action.payload.id)
+		}
+	}
+
 });
+
+export const { deleteSong } = songSlice.actions
 
 export default songSlice.reducer;
