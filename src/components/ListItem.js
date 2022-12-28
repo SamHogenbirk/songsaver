@@ -8,8 +8,9 @@ const ListItem = ({ id, title, artist, genre, rating }) => {
 	const dispatch = useDispatch()
 
 	const handleDel = () => {
-		dispatch(deleteSong({ id: id }))
-	}
+		console.log(title)
+		dispatch(deleteSong({ id }))
+	};
 
 	return (
 
@@ -21,15 +22,15 @@ const ListItem = ({ id, title, artist, genre, rating }) => {
 			<td>
 				<button
 					className="delete"
-					onClick={(e) => handleDel(e)}>
+					onClick={handleDel}>
 					delete
 				</button>
 			</td>
 		</tr>
 
 	);
-	}
+}
 
 
 
-	export default ListItem
+export default ListItem
