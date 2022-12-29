@@ -3,12 +3,12 @@ import { useDispatch } from "react-redux"
 import { deleteSong } from "../features/songSlice"
 
 
-const ListItem = ({ id, title, artist, genre, rating }) => {
+const ListItems = ({ id, title, artist, genre, rating }) => {
 
 	const dispatch = useDispatch()
 
 	const handleDel = () => {
-		console.log(title)
+
 		dispatch(deleteSong({ id }))
 	};
 
@@ -31,6 +31,4 @@ const ListItem = ({ id, title, artist, genre, rating }) => {
 	);
 }
 
-
-
-export default ListItem
+export default ListItems
