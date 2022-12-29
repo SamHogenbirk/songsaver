@@ -3,11 +3,9 @@ import { useState } from "react"
 import { addSong } from "../features/songSlice"
 import { useDispatch } from "react-redux"
 
-
-
 const InputHeader = () => {
 
-    const [songs, setSongs] = useState({})
+    const [songs, setSongs] = useState({ title: "", artist: "", genre: "", rating: "" })
 
     const dispatch = useDispatch()
 
@@ -29,6 +27,8 @@ const InputHeader = () => {
             genre: songs.genre,
             rating: songs.rating
         }))
+        setSongs({ title: "", artist: "", genre: "", rating: "" })
+        console.log(songs)
 
     }
 
@@ -40,6 +40,7 @@ const InputHeader = () => {
                         type="text"
                         name="title"
                         onChange={handleChange}
+                        value={songs.title}
                     ></input>
                 </label>
 
@@ -48,6 +49,7 @@ const InputHeader = () => {
                         type="text"
                         name="artist"
                         onChange={handleChange}
+                        value={songs.artist}
                     ></input>
                 </label>
 
