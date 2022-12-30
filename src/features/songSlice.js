@@ -1,18 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const emo = {
+let isSorted = false
 
-	1: "0x1F4A9",
-	2: "0x1F641",
-	3: "0x1F610",
-	4: "0x1F642",
-	5: "0x1F60D"
-}
+// { id: "1", title: "a", artist: "z", genre: "a", rating: "b" },
+// { id: "2", title: "z", artist: "a", genre: "z", rating: "e" },
+// { id: "3", title: "d", artist: "c", genre: "t", rating: "a" },
+// { id: "4", title: "d", artist: "c", genre: "t", rating: "d" },
+// { id: "5", title: "d", artist: "c", genre: "t", rating: "c" }
 
-const convertEmo = (emo) => String.fromCodePoint(emo)
-
-// { id: "1", title: "a", artist: "a", genre: "a", rating: "1" },
-// { id: "2", title: "z", artist: "z", genre: "z", rating: "2" }
 
 const songSlice = createSlice({
 
@@ -29,15 +24,16 @@ const songSlice = createSlice({
 				title: ac.title,
 				artist: ac.artist,
 				genre: ac.genre,
-				rating: convertEmo(emo[ac.rating])
+				rating: ac.rating
 			}
 			state.push(newSong)
-			// console.log(newSong)
 		},
 
 		sortSong: (songs, action) => {
-	
-			return songs.sort((a, b) => (a[action.payload.title] < b[action.payload.title] ? 1 : -1))
+
+			const res = isSorted ? songs.reverse() : songs.sort((a, b) => (a[action.payload] < b[action.payload] ? -1 : 1))
+			isSorted = !isSorted
+			return res
 		},
 
 		deleteSong: (songs, action) => {

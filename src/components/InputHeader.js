@@ -74,11 +74,11 @@ const InputHeader = () => {
                         name="rating"
                     >
                         <option value="">--please choose--</option>
-                        <option value="1">💩</option>
-                        <option value="2">🙁</option>
-                        <option value="3">😐</option>
-                        <option value="4">🙂</option>
-                        <option value="5">😍 </option>
+                        <option value="a">💩</option>
+                        <option value="b">🙁</option>
+                        <option value="c">😐</option>
+                        <option value="d">🙂</option>
+                        <option value="e">😍 </option>
                     </select>
                 </label>
 
