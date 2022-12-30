@@ -11,15 +11,18 @@ const emo = {
 
 const convertEmo = (emo) => String.fromCodePoint(emo)
 
+// { id: "1", title: "a", artist: "a", genre: "a", rating: "1" },
+// { id: "2", title: "z", artist: "z", genre: "z", rating: "2" }
+
 const songSlice = createSlice({
 
 	name: "songs",
-	initialState: [{ id: "1", title: "a", artist: "a", genre: "a", rating: "a" },
-	{ id: "2", title: "z", artist: "z", genre: "z", rating: "z" }],
+	initialState: [],
 
 	reducers: {
 
 		addSong: (state, action) => {
+
 			const ac = action.payload
 			const newSong = {
 				id: ac.id,
@@ -29,18 +32,22 @@ const songSlice = createSlice({
 				rating: convertEmo(emo[ac.rating])
 			}
 			state.push(newSong)
+			// console.log(newSong)
+		},
+
+		sortSong: (songs, action) => {
+	
+			return songs.sort((a, b) => (a[action.payload.title] < b[action.payload.title] ? 1 : -1))
 		},
 
 		deleteSong: (songs, action) => {
 
-			return songs
-				.map(item => item)//new array
-				.filter((songs) => songs.id !== action.payload.id)
+			return songs.filter((songs) => songs.id !== action.payload.id)
 		}
 	}
 
 });
 
-export const { addSong, deleteSong } = songSlice.actions
+export const { addSong, sortSong, deleteSong } = songSlice.actions
 
 export default songSlice.reducer;

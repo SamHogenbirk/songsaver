@@ -1,21 +1,27 @@
-import React from "react"
-import { useState } from "react"
+import React, { useEffect } from "react"
 import ListItem from "./ListItems"
 import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { sortSong } from "../features/songSlice"
 
 
 
 const List = () => {
 
-    const [songs, setSongs] = useState(useSelector((state) => state.song));
+    const songs = useSelector((state) => state.song)
+    const dispatch = useDispatch()
+
 
     const handleSort = (e) => {
+
         e.preventDefault()
-        let sorted = false
-        const { name } = e.target.dataset.name
-        sorted ? setSongs.reverse() : setSongs([...songs].sort((a, b) => (a[name] < b[name] ? 1 : -1)))
-        sorted = !sorted
+        dispatch(sortSong(songs))
+        // console.log(e)
+        // let sorted = false
+        // const { name } = e.target.dataset.name
+        // return [...songs].sort((a, b) => (a[name] < b[name] ? 1 : -1))
     }
+
 
     return (
 
