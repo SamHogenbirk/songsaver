@@ -1,6 +1,8 @@
-import List from "./components/List";
-import "./App.css";
-import InputHeader from "./components/InputHeader";
+import "./App.css"
+import InputHeader from "./components/InputHeader"
+import List from "./components/List"
+import Footer from "./components/Footer"
+
 
 const App = () => {
   return (
@@ -8,8 +10,9 @@ const App = () => {
     <main>
       <InputHeader />
       <List />
+      <Footer />
     </main>
 
   )
 }
-export default App;
+export default App

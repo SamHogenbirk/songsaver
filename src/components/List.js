@@ -1,9 +1,21 @@
 import React from "react"
+import { useState } from "react"
 import ListItem from "./ListItems"
 import { useSelector } from "react-redux"
 
+
+
 const List = () => {
-    const songs = useSelector((state) => state.song)
+
+    const [songs, setSongs] = useState(useSelector((state) => state.song));
+
+    const handleSort = (e) => {
+        e.preventDefault()
+        let sorted = false
+        const { name } = e.target.dataset.name
+        sorted ? setSongs.reverse() : setSongs([...songs].sort((a, b) => (a[name] < b[name] ? 1 : -1)))
+        sorted = !sorted
+    }
 
     return (
 
@@ -12,10 +24,23 @@ const List = () => {
             <table style={{ width: "100%" }}>
                 <thead>
                     <tr className="song-header">
-                        <th className="song-row">Song</th>
-                        <th className="song-row">Artist</th>
-                        <th className="song-row">Genre</th>
-                        <th className="song-row">Rating</th>
+                        <th className="song-row"
+                            onClick={(e) => handleSort(e)}
+                            data-name="title">Song</th>
+
+                        <th className="song-row"
+                            onClick={(e) => handleSort(e)}
+                            data-name="artist">Artist</th>
+
+                        <th className="song-row"
+                            onClick={(e) => handleSort(e)}
+                            data-name="genre">Genre</th>
+
+                        <th className="song-row"
+                            onClick={(e) => handleSort(e)}
+                            data-name="rating">Rating</th>
+
+
                     </tr>
                 </thead>
 
@@ -31,7 +56,6 @@ const List = () => {
                     )}
                 </tbody>
             </table>
-
         </div>
 
     )

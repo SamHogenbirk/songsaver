@@ -20,16 +20,17 @@ const InputHeader = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        dispatch(addSong({
-            id: parseInt(Math.floor(Math.random() * Date.now()).toString().replace(".", "")),
-            title: songs.title,
-            artist: songs.artist,
-            genre: songs.genre,
-            rating: songs.rating
-        }))
-        setSongs({ title: "", artist: "", genre: "", rating: "" })
-        console.log(songs)
+        if (songs.title.length && songs.artist.length) {
+            dispatch(addSong({
+                id: parseInt(Math.floor(Math.random() * Date.now()).toString().replace(".", "")),
+                title: songs.title,
+                artist: songs.artist,
+                genre: songs.genre,
+                rating: songs.rating
+            }))
+        } else { alert("please enter song and artist") }
 
+        setSongs({ title: "", artist: "", genre: "", rating: "" })
     }
 
     return (
@@ -59,7 +60,7 @@ const InputHeader = () => {
                         onChange={handleChange}
                         name="genre"
                     >
-                        <option value="">--please choose an option--</option>
+                        <option value="">--please choose--</option>
                         <option value="rock">Rock</option>
                         <option value="house">House</option>
                         <option value="pop">Pop</option>
@@ -72,7 +73,7 @@ const InputHeader = () => {
                         onChange={handleChange}
                         name="rating"
                     >
-                        <option value="">--please choose an option--</option>
+                        <option value="">--please choose--</option>
                         <option value="1">💩</option>
                         <option value="2">🙁</option>
                         <option value="3">😐</option>

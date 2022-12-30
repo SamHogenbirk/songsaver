@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const emo = {
+
 	1: "0x1F4A9",
 	2: "0x1F641",
 	3: "0x1F610",
@@ -10,11 +11,11 @@ const emo = {
 
 const convertEmo = (emo) => String.fromCodePoint(emo)
 
-
 const songSlice = createSlice({
 
 	name: "songs",
-	initialState: [],
+	initialState: [{ id: "1", title: "a", artist: "a", genre: "a", rating: "a" },
+	{ id: "2", title: "z", artist: "z", genre: "z", rating: "z" }],
 
 	reducers: {
 

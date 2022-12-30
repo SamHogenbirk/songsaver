@@ -7,8 +7,7 @@ const ListItems = ({ id, title, artist, genre, rating }) => {
 
 	const dispatch = useDispatch()
 
-	const handleDel = () => {
-
+	const handleDel = () => {	
 		dispatch(deleteSong({ id }))
 	};
 
