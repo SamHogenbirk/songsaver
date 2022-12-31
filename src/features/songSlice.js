@@ -2,18 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let isSorted = false
 
-// { id: "1", title: "a", artist: "z", genre: "a", rating: "b" },
-// { id: "2", title: "z", artist: "a", genre: "z", rating: "e" },
-// { id: "3", title: "d", artist: "c", genre: "t", rating: "a" },
-// { id: "4", title: "d", artist: "c", genre: "t", rating: "d" },
-// { id: "5", title: "d", artist: "c", genre: "t", rating: "c" }
 
 const songSlice = createSlice({
 
 	name: "songs",
 	initialState: [
-		{ id: "1", title: "a", artist: "z", genre: "a", rating: "b" },
-		{ id: "2", title: "z", artist: "a", genre: "z", rating: "e" },],
+		{ id: "1", title: "White Shadows", artist: "Coldplay", genre: "Pop", rating: "c" },
+		{ id: "2", title: "Bigger Than Prince", artist: "Green Velvet", genre: "House", rating: "e" },
+		{ id: "3", title: "Smells like teen spirit", artist: "Nirvana", genre: "Rock", rating: "noRating" }],
 
 	reducers: {
 

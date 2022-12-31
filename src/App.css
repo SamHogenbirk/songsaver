@@ -56,10 +56,9 @@ table tr:nth-child(even) {
   border: 1px;
   border-color: white; 
   border-radius: 15px;
-  background: white;
-  color: #0085d3; 
-    width: 60px;
-    height: 25px;
+  background-color: #f2efef;
+  width: 60px;
+  height: 25px;
 }
 
 button:hover{
