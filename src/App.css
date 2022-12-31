@@ -1,16 +1,90 @@
+
+*{
+  box-sizing: border-box;
+  padding: 0
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
 .song-row {  
   border: 1px solid #ffffff;
   border-radius: 5px;
   text-align: center;
   padding: 8px;
-  font-size: 20px;
-  background-color: lightgreen;
+  font-size: 15px;
+  background-color: #b0e1b0;
+
 }
 
-.delete {
+.song-list{
+  background-color:azure;
+  border: 1px solid azure ;
+  font-size: 20px;
+
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   border: 1px solid #ffffff;
-  border-radius: 50%;
+  border-radius: 5px;
   text-align: center;
-  font-size: 10px;
-  background-color: red;
+  padding: 8px;
+  font-size: 20px;
+  background-color: azure;
+}
+
+table tr:nth-child(even) {
+  background-color: rgb(200, 224, 209);
+}
+
+.submit {
+  align-items: center;
+  border: 1px;
+  border-color: white; 
+  border-radius: 15px;
+  background: white;
+  color: #0085d3; 
+    width: 60px;
+    height: 25px;
+}
+
+button:hover{
+background-color: #0085d3; 
+color: white; 
+}
+
+.delete{
+    position:absolute;
+    right: 30px;
+}
+  
+.delete:hover{
+    cursor: pointer;
+}
+
+.input-field{
+  
+  outline: none;
+  border: none;
+  height: 20px;
+  background-color: #f2efef;
+  margin-left: 2px;
+  border-radius: 3px;
+  width: 200px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
 }

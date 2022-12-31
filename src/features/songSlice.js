@@ -8,11 +8,12 @@ let isSorted = false
 // { id: "4", title: "d", artist: "c", genre: "t", rating: "d" },
 // { id: "5", title: "d", artist: "c", genre: "t", rating: "c" }
 
-
 const songSlice = createSlice({
 
 	name: "songs",
-	initialState: [],
+	initialState: [
+		{ id: "1", title: "a", artist: "z", genre: "a", rating: "b" },
+		{ id: "2", title: "z", artist: "a", genre: "z", rating: "e" },],
 
 	reducers: {
 
@@ -36,6 +37,8 @@ const songSlice = createSlice({
 			return res
 		},
 
+		filterSongs: () => { },
+
 		deleteSong: (songs, action) => {
 
 			return songs.filter((songs) => songs.id !== action.payload.id)
@@ -44,6 +47,6 @@ const songSlice = createSlice({
 
 });
 
-export const { addSong, sortSong, deleteSong } = songSlice.actions
+export const { addSong, sortSong, filterSongs, deleteSong } = songSlice.actions
 
 export default songSlice.reducer;

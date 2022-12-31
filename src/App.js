@@ -1,18 +1,14 @@
 import "./App.css"
-import InputHeader from "./components/InputHeader"
+import Input from "./components/Input"
 import List from "./components/List"
-import Footer from "./components/Footer"
-
 
 const App = () => {
   return (
 
-    <main>
-      <InputHeader />
+    <main className="container">
+      <Input />
       <List />
-      <Footer />
     </main>
-
   )
 }
 export default App

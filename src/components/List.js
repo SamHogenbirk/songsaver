@@ -33,23 +33,22 @@ const List = () => {
             <table style={{ width: "100%" }}>
                 <thead>
                     <tr className="song-header">
-                        <th className="song-row"
+                        <th className=" unselectable"
                             onClick={(e) => handleSort(e)}
                             data-name="title">Song</th>
 
-                        <th className="song-row"
+                        <th className=" unselectable"
                             onClick={(e) => handleSort(e)}
-                            data-name="artist">Artist</th>
+                            data-name="artist">Artist </th>
 
-                        <th className="song-row"
+                        <th className=" unselectable"
                             onClick={(e) => handleSort(e)}
-                            data-name="genre">Genre</th>
+                            data-name="genre">Genre </th>
 
-                        <th className="song-row"
+
+                        <th className=" unselectable"
                             onClick={(e) => handleSort(e)}
                             data-name="rating">Rating</th>
-
-
                     </tr>
                 </thead>
 

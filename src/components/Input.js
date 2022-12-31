@@ -35,9 +35,10 @@ const InputHeader = () => {
 
     return (
         <header>
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <label>Title:
                     <input
+                        className="input-field"
                         type="text"
                         name="title"
                         onChange={handleChange}
@@ -47,6 +48,7 @@ const InputHeader = () => {
 
                 <label>Artist:
                     <input
+                        className="input-field"
                         type="text"
                         name="artist"
                         onChange={handleChange}
@@ -56,6 +58,7 @@ const InputHeader = () => {
 
                 <label>Genre:
                     <select
+                        className="input-field"
                         value={songs.genre}
                         onChange={handleChange}
                         name="genre"
@@ -69,6 +72,7 @@ const InputHeader = () => {
 
                 <label>Rating:
                     <select
+                        className="input-field"
                         value={songs.rating}
                         onChange={handleChange}
                         name="rating"
@@ -78,11 +82,11 @@ const InputHeader = () => {
                         <option value="b">🙁</option>
                         <option value="c">😐</option>
                         <option value="d">🙂</option>
-                        <option value="e">😍 </option>
+                        <option value="e">😍</option>
                     </select>
                 </label>
 
-                <button>add song</button>
+                <button className="submit">add song</button>
             </form>
         </header>
 
