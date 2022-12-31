@@ -4,6 +4,12 @@
   padding: 0
 }
 
+.song-header{
+ 
+  border-right:  1px burlywood solid;
+
+}
+
 .container{
   display: flex;
   flex-direction: column;
@@ -57,17 +63,18 @@ table tr:nth-child(even) {
 }
 
 button:hover{
-background-color: #0085d3; 
-color: white; 
+  cursor: pointer;
+  background-color: green; 
+  color: white; 
 }
 
 .delete{
-    position:absolute;
-    right: 30px;
+  position:absolute;
+  right: 30px;
 }
   
 .delete:hover{
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .input-field{

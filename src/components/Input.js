@@ -26,7 +26,7 @@ const InputHeader = () => {
                 title: songs.title,
                 artist: songs.artist,
                 genre: songs.genre,
-                rating: songs.rating
+                rating: songs.rating ? songs.rating : "noRating"
             }))
         } else { alert("please enter song and artist") }
 
@@ -58,10 +58,11 @@ const InputHeader = () => {
 
                 <label>Genre:
                     <select
-                        className="input-field"
+                        className="input-field dropdown"
                         value={songs.genre}
                         onChange={handleChange}
                         name="genre"
+
                     >
                         <option value="">--please choose--</option>
                         <option value="rock">Rock</option>
@@ -72,12 +73,12 @@ const InputHeader = () => {
 
                 <label>Rating:
                     <select
-                        className="input-field"
+                        className="input-field dropdown"
                         value={songs.rating}
                         onChange={handleChange}
                         name="rating"
                     >
-                        <option value="">--please choose--</option>
+                        <option value="x">--please choose--</option>
                         <option value="a">💩</option>
                         <option value="b">🙁</option>
                         <option value="c">😐</option>

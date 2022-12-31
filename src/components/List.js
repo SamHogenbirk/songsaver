@@ -10,7 +10,8 @@ const emo = {
     b: "0x1F641",
     c: "0x1F610",
     d: "0x1F642",
-    e: "0x1F60D"
+    e: "0x1F60D",
+    noRating: "0x1F636"
 }
 
 const convertEmo = (emo) => String.fromCodePoint(emo)
@@ -32,21 +33,21 @@ const List = () => {
 
             <table style={{ width: "100%" }}>
                 <thead>
-                    <tr className="song-header">
-                        <th className=" unselectable"
+                    <tr >
+                        <th className="song-header unselectable"
                             onClick={(e) => handleSort(e)}
                             data-name="title">Song</th>
 
-                        <th className=" unselectable"
+                        <th className=" song-header unselectable"
                             onClick={(e) => handleSort(e)}
-                            data-name="artist">Artist </th>
+                            data-name="artist">Artist</th>
 
-                        <th className=" unselectable"
+                        <th className=" song-header unselectable"
                             onClick={(e) => handleSort(e)}
-                            data-name="genre">Genre </th>
+                            data-name="genre">Genre</th>
 
 
-                        <th className=" unselectable"
+                        <th className=" song-header unselectable"
                             onClick={(e) => handleSort(e)}
                             data-name="rating">Rating</th>
                     </tr>
@@ -54,6 +55,7 @@ const List = () => {
 
                 <tbody>
                     {songs.map((item) =>
+
                         <ListItem
                             key={item.id}
                             id={item.id}
